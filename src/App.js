@@ -29,15 +29,11 @@ class App extends React.Component
 getSnapshotBeforeUpdate(prevprops,prevstate)
 {
 
-  var p1=prevstate.rno
-  var p2=prevstate.sname
-  var p3=prevstate.mark
-  setTimeout(()=>document.getElementById("res1").innerHTML="prev value:"+p1+" "+p2+" "+p3,2000)
-  for (let i=0;i>=p1.length;i++)
-  {
-    p1=p1+p1
-  }
-  
+  // var p1=""
+  // var p2=""
+  // var p3=""
+  setTimeout(()=>document.getElementById("res1").innerHTML="prev value:"+prevstate.rno+" "+prevstate.sname+" "+prevstate.mark,2000)
+
 }
 
   render()
@@ -54,9 +50,10 @@ getSnapshotBeforeUpdate(prevprops,prevstate)
     <input type='text' id='t1' placeholder='enter sname'></input>
     <input type='text' id='t2' placeholder='enter rno'></input>
     <input type='text' id='t3' placeholder='enter mark'></input>
+      <div id='res2'></div> 
     
     <button onClick={(e)=>(this.dis)(e)}id='click'>change</button>
-    
+    <button onClick={(e)=>this.div(e)}>show all</button>  
     </>
   )}
 }
