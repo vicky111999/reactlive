@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/vicky111999/reactlive.git/static/css/main.e6c13ad2.css",
+    "main.js": "/vicky111999/reactlive.git/static/js/main.60c9bf56.js",
+    "index.html": "/vicky111999/reactlive.git/index.html",
+    "main.e6c13ad2.css.map": "/vicky111999/reactlive.git/static/css/main.e6c13ad2.css.map",
+    "main.60c9bf56.js.map": "/vicky111999/reactlive.git/static/js/main.60c9bf56.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.60c9bf56.js"
+  ]
+}
