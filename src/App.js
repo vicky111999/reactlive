@@ -1,4 +1,57 @@
-import React from 'react'
+import Axios from 'axios'
+import {useState} from 'react'
+function App()
+{
+  const [city,setCity]=useState("")
+  const [output,setOutput]=useState(null)
+const dis=()=>{
+  const api="aff4b2d31ba11226f571f7c8425d80b2"
+  const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
+  console.log(url)
+  Axios.get(url).then((res)=>{
+    console.log(res.data)
+    setOutput(res.data)
+  }).catch((err)=>{
+    console.log("error something",err.response.data)
+  })
+}
+const show=(e)=>{
+  setCity(e.target.value)
+}
+  return(
+  <>
+  <h1>API </h1>
+  <input type="text" value={city} placeholder="enter city" onChange={(e)=>show(e)}></input>
+  <input type="button"  onClick={dis} value="weather report"></input>
+  <h2>Main:{output !==null && output.weather[0].main}</h2>
+  <h2>Description:{output !==null && output.weather[0].description}</h2>
+  <h2>Wind speed:{output !==null && output.wind.speed}</h2>
+  </>
+)
+}
+export default App
+/*import {useState} from 'react'
+function App()
+{
+  const [city,setCity]=useState("")
+   const dis=()=>{
+  //   const api="aff4b2d31ba11226f571f7c8425d80b2"
+  //   const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`
+  //   console.log(url)
+  }
+   const show=(e)=>{
+     setCity(e.target.value)
+   }
+  return(
+    <>
+    <h1>API HANDLING</h1>
+    <input type="text" value={city} onChange={(e)=>show(e)} placeholder='enter city name'> </input><br></br>
+    <input type="button" onClick={dis}>weather report</input> 
+    </>
+  )
+}
+export default App 
+/*import React from 'react'
 class App extends React.Component
 {
   constructor(props)
@@ -29,11 +82,18 @@ class App extends React.Component
 getSnapshotBeforeUpdate(prevprops,prevstate)
 {
 
-  // var p1=""
-  // var p2=""
-  // var p3=""
-  setTimeout(()=>document.getElementById("res1").innerHTML="prev value:"+prevstate.rno+" "+prevstate.sname+" "+prevstate.mark,2000)
-
+   var p1=prevstate.rno
+   var p2=prevstate.sname
+   var p3=prevstate.mark
+   var p4=""
+   var p5=""
+   var p6=""
+  setTimeout(()=>document.getElementById("res1").innerHTML="prev value:"+p1+" "+p2+" "+p3,2000)
+  for () i=0;i>1;i=++
+  {
+    p4=p4+p1
+  }
+  document.getElementById("res2").innerHTML=p4
 }
 
   render()
